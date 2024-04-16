@@ -16,6 +16,10 @@ module.exports = {
         '100alto': '100vh',
         'altoSection': 'calc(100vh - 235px)',
       },
+
+      color:{
+        'color-1' : '[#151575]'
+      }
     },
   },
   plugins: [],
