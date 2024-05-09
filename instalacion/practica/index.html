@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de navegación responsive con Tailwind CSS</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="bg-white shadow-md flex items-center justify-between px-4 py-4 lg:px-16 lg:py-6">
+    <a href="#" class="flex items-center">
+      <img src="logo.png" alt="Logo" class="h-6 w-6 mr-4">
+      <span class="text-lg font-bold">Tu sitio web</span>
+    </a>
+
+    <ul class="flex flex-row gap-4 lg:static lg:flex lg:justify-end">  <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Inicio</a></li>
+      <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Animate</a></li>
+    </ul>
+  </nav>
+
+  <div class="container mx-auto px-4 lg:px-16 py-12">
+    <h1>Título de tu página</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam eget ipsum ultricies varius. Maecenas iaculis quam quis diam auctor, eget porta tellus tincidunt.</p>
+  </div>
+
+  <div 
+  style="background-color: blueviolet; width: 150px; height: 150px;" 
+  class="animate__animated animate__bounce">bounce
+</div>
+
+<div id="inicio">
+    <div class="inicioBox" data-aos="flip-up" data-aos-delay="400" data-aos-duration="1500">
+        <h1 id="titulo">Aprendiendo a usar AOS</h1>
+    </div>
+
+</body>
+</html>
+
+
