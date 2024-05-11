@@ -80,6 +80,9 @@ const multiplicacion = precio1 * precio2;
 console.log("El resultado de la multiplicacion de " + precio1 + " x " + precio2 + " es: " + multiplicacion);
 console.log(`El resultado de la multiplicacion de ${precio1} x ${precio2} es: ${multiplicacion}`);
 
+
+
+
 // STRING CON NUMERO 
 //Trata el simbolo + para concatenar, pero los otros los toma como una suma 
 
@@ -108,7 +111,9 @@ console.log(`El resultado de la division de ${cifra1} / ${cifra2} es: ${division
 
 
 
-// Exponenciacion / Potencia: Calcula la base a la potencia del exponente.
+
+// Exponenciacion / Potencia: Calcula la base a la potencia del exponente. 
+//Es una multiplicacion de valor inicial por el segun valor por ejemplo, 5 multiplicado 6 veces en resultados de cada una
 const potencia = 5 ** 2;
 potencia;
 
@@ -135,12 +140,14 @@ resultado;
 
 // Por ejemplo, para determinar si un numero es par o impar, se puede utilizar el operador modulo (%) entre 2.
 // Si el resultado es 0, entonces el numero es par, de lo contrario es impar.
+//Es como una suma para los numeros impares y si sobra algo dependiendo del numero de resultado, ese es ejemplo: 9/2 daria 1 ya que en la division solo queda 1 numero
 
 
 let numeroPar = 10;
 let numeroImpar = 9;
 
 console.log(numeroPar % 2); // 0, entonces el numero es par.
+console.log(numeroImpar % 3);  // 0, entonces el numero es par.
 console.log(numeroImpar % 2); // 1, entonces el numero es impar.
 
 
@@ -161,6 +168,20 @@ variable1 = +variable1;
 // Ahora la variable es de tipo numero, veamoslo en la consola con typeof()
 console.log(typeof variable1);
 
+console.log(variable1);
+
+
+//EJERCICIO
+
+//para solucionar este ejercicio, hay que agregar el positivo unitario para convertir el string (texto) en numero
+//let valorIngresado1 = prompt("Ingresa un numero: ")
+//let valorIngresado2 = prompt("Ingresa otro numero: ")
+
+//const total = +valorIngresado1 + +valorIngresado2;
+
+//alert(`el resultado de la suma de ${valorIngresado1} + ${valorIngresado2} es: ${total}`);
+
+
 
 // En el siguiente ejemplo usaremos prompt() y alert() y positivo unario (+) 
 // para sumar dos numeros ingresados por el usuario y mostrar el resultado en un mensaje de alerta.
@@ -171,6 +192,8 @@ console.log(typeof variable1);
 // let valorIngresado2 = prompt("Ingresa otro numero: ");
 // const total = +valorIngresado1 + +valorIngresado2;
 // alert(`El resultado de la suma de ${valorIngresado1} + ${valorIngresado2} es: ${total}`);
+
+
 
 
 
@@ -194,7 +217,7 @@ console.log(numeroPositivo);
 
 
 
-// Incremento Unitario: Ingrementa en 1 el valor de una variable.
+// Incremento Unitario (++): Ingrementa en 1 el valor de una variable.
 // IMPORTANTE: la variable debe ser de tipo let, ya que const no permite reasignacion de valores.
 
 let numero = 5;
@@ -215,7 +238,7 @@ console.log(numero);
 
 
 
-// Decremento Unitario: Resta en 1 el valor de una variable.
+// Decremento Unitario : Resta en 1 el valor de una variable.
 // IMPORTANTE: la variable debe ser de tipo let, ya que const no permite reasignacion de valores.
 
 numero--; // Esto es equivalente a: numero = numero - 1;
@@ -244,3 +267,4 @@ console.log(numero);
 // Puedes usar prompt() y alert() para solicitar los numeros y mostrar los resultados.
 // Muestra un mensaje por cada resultado obtenido con el siguiente formato:
 // "El resultado de la {operacion} de {numero1} {simboloperacion} {numero2} es: {resultado}"
+

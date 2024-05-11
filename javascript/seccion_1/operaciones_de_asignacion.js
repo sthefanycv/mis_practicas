@@ -77,6 +77,8 @@ let precio = 10;
 // Preguntamos al usuario cuantos articulos quiere comprar.
 let articulos = +prompt("¿Cuantos articulos quieres comprar?");
 
+//prompt es u dato de tipo string, para convertirlo en numero, se usa el operador positivo unitario (+) lo que da en +prompt
+
 // Multiplicamos el precio base por la cantidad de articulos que quiere comprar el usuario y mostramos el resultado en un alert.
 precio *= articulos; // precio = precio * articulos
 
