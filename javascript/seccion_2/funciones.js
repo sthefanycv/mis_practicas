@@ -11,7 +11,7 @@
         3) Parentesis () donde se indican los parametros, en caso de no recibir parametros se dejan vacios.
         4) Llaves {} es donde definimos el bloque de código que se ejecutará al llamar la función.
         5) return: palabra reservada que indica que la función retornará un valor,
-        el return es OPCIONAL, es decir si la funcion lo amerita.
+        el return es OPCIONAL, es decir si la funcion lo amerita. Es para retornar una respuesta lietral cuando es una operacion directa  
 
         IMPORTANTE: Es convencion y buena practica que cada sentencia dentro de una funcion debe 
         finalizar con ;
@@ -209,7 +209,7 @@ nombres.forEach(
 
 // Las funciones de flecha son una forma más simple de escribir funciones anónimas, llegaron en ES6
 // y se han vuelto muy populares por su sintaxis más corta y clara.
-// NOTA: Ls funciones de flechas son las unicas que pueden manejar retorno implicito, es decir
+ // NOTA: Ls funciones de flechas son las unicas que pueden manejar retorno implicito, es decir
 // si la funcion solo tiene una linea de código, no es necesario escribir el return ni colocar las llaves {}.
 
 
@@ -224,7 +224,7 @@ function exponent(base, exponente){
 nombres.forEach( (nombre) => console.log(`Hola ${nombre}, ten un buen dia!`) );
 
 // Funcion de flecha con retorno implicito.
-const division = (num1, num2) => num1 / num2;
+const division = (num1, num2) => num1 / num2; 
 
 // Funcion de flecha con retorno explicito.
 const multiplicacion = (num1, num2) => { return num1 * num2; };

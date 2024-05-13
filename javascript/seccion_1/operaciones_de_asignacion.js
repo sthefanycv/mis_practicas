@@ -97,3 +97,12 @@ total /= personas; // total = total / personas
 
 alert(`Cada persona debe pagar: ${total}$`);
 
+
+// Asignación de módulo(%=)
+let numero = 10;
+
+// Validamos si el numero es par o impar
+numero %= 2; // numero = numero % 2
+
+console.log(`El numero es ${numero} por lo tanto es par`);
+
