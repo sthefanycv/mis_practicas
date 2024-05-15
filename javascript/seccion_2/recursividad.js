@@ -496,3 +496,5 @@ function salir(){
     PISTA: en algun momento necesitaras usar if y AND/&&
     PISTA 2: Para los mensajes de retorno puedes usar alert() o console.log()
 */
+
+
