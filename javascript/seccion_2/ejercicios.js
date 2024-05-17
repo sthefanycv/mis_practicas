@@ -1,93 +1,66 @@
+function juegoSemaforo() {
+    // Mensaje inicial para elegir el color
+    let colorInput = prompt("Elige un color para iniciar:\n1) VERDE\n2) AMARILLO\n3) ROJO");
+    let color;
 
+    // Convertir el número o texto ingresado a color
+    if (colorInput.toLowerCase() == "1") {
+        color = "verde";
+    } else if (colorInput.toLowerCase() == "2") {
+        color = "amarillo";
+    } else if (colorInput.toLowerCase() == "3") {
+        color = "rojo";
+    } else {
+        alert("Opción no válida.");
+        return; // Salir de la función si la opción no es válida
+    }
 
-// Mensaje inicial para elegir color
-let color = prompt(`Elige un color para iniciar:
-1) VERDE
-2) AMARILLO
-3) ROJO
-OTRO) Opción no válida`);
+    // Variable para almacenar la acción del usuario
+    let accionInput = prompt("El semáforo está de color " + color.toUpperCase() + ", ¿Qué deseas hacer?\n1) Pasar normalmente\n2) Acelerar\n3) Esperar");
+    let accion;
 
-// Validación de la entrada del color
-if (color === "1" || color === "VERDE") {
-    color = "VERDE";
-} else if (color === "2" || color === "AMARILLO") {
-    color = "AMARILLO";
-} else if (color === "3" || color === "ROJO") {
-    color = "ROJO";
-} else {
-    alert("Respuesta no válida. Intenta nuevamente.");
-    return; // Termina el juego si la opción de color es inválida
+    // Convertir el número o texto ingresado a acción
+    if (accionInput.toLowerCase() == "1") {
+        accion = "pasar normalmente";
+    } else if (accionInput.toLowerCase() == "2") {
+        accion = "acelerar";
+    } else if (accionInput.toLowerCase() == "3") {
+        accion = "esperar";
+    } else {
+        alert("Opción no válida.");
+        return; // Salir de la función si la opción no es válida
+    }
+
+    // Evaluar la acción según el color
+    if (color === "verde") {
+        if (accion === "pasar normalmente") {
+            alert("¡Bien hecho!, pasaste en el momento adecuado ✅, ¡Has ganado! 😁");
+        } else if (accion === "acelerar") {
+            alert("¡Oh no!, Aceleraste demasiado y chocaste 💥, ¡Has perdido! 😞");
+        } else if (accion === "esperar") {
+            alert("¡Oh no!, Creaste un bloqueo y los demás conductores están furiosos 🤬, ¡Has Perdido! ❌");
+        }
+    } else if (color === "amarillo") {
+        if (accion === "pasar normalmente") {
+            alert("¡Oh no!, No aceleraste lo suficiente y te han chocado 💥, ¡Has perdido! ❌");
+        } else if (accion === "acelerar") {
+            alert("¡Bien hecho!, pasaste en el momento justo ✅, ¡Has ganado! 😁");
+        } else if (accion === "esperar") {
+            alert("¡Oh no!, Creaste un bloqueo y los demás conductores están furiosos 🤬, ¡Has Perdido! 😞");
+        }
+    } else if (color === "rojo") {
+        if (accion === "pasar normalmente") {
+            alert("¡Oh no!, Pasaste en el momento indebido ❌, ¡Has perdido! 😞");
+        } else if (accion === "acelerar") {
+            alert("¡Oh no!, Cruzaste mientras autos en otra dirección pasaban y chocaste 💥, ¡Has Perdido! ❌");
+        } else if (accion === "esperar") {
+            alert("¡Bien hecho!, Esperaste en el momento adecuado ✅, ¡Has ganado! 😁");
+        }
+    }
 }
 
-// Mensaje de situación y opciones de acción
-let accion = prompt(`El semáforo está de color ${color}, ¿qué deseas hacer?
-1) Pasar normalmente
-2) Acelerar
-3) Esperar
-OTRO) Opción no válida`);
+// Llamada a la función para iniciar el juego
+juegoSemaforo();
 
-// Validación de la entrada de la acción
-if (accion === "1" || accion === "PASAR NORMALMENTE") {
-    accion = "PASAR NORMALMENTE";
-} else if (accion === "2" || accion === "ACELERAR") {
-    accion = "ACELERAR";
-} else if (accion === "3" || accion === "ESPERAR") {
-    accion = "ESPERAR";
-} else {
-    alert("Respuesta no válida. Intenta nuevamente.");
-    return; // Termina el juego si la opción de acción es inválida
-}
 
-// Lógica del juego usando Switch-Case
-switch (color) {
-    case "VERDE":
-        switch (accion) {
-            case "PASAR NORMALMENTE":
-                console.log("¡Bien hecho! Pasaste en el momento adecuado ✅, ¡Has ganado! ");
-                break;
-            case "ACELERAR":
-                console.log("¡Oh no! Aceleraste demasiado y chocaste , ¡Has perdido! ");
-                break;
-            case "ESPERAR":
-                console.log("¡Oh no! Creaste un bloqueo y los demás conductores están furiosos , ¡Has perdido! ❌");
-                break;
-            default:
-                console.log("Respuesta no válida.");
-        }
-        break;
-
-    case "AMARILLO":
-        switch (accion) {
-            case "PASAR NORMALMENTE":
-                console.log("¡Oh no! No aceleraste lo suficiente y te han chocado , ¡Has perdido! ❌");
-                break;
-            case "ACELERAR":
-                console.log("¡Bien hecho! Pasaste en el momento justo ✅, ¡Has ganado! ");
-                break;
-            case "ESPERAR":
-                console.log("¡Oh no! Creaste un bloqueo y los demás conductores están furiosos , ¡Has perdido! ");
-                break;
-            default:
-                console.log("Respuesta no válida.");
-        }
-        break;
-
-    case "ROJO":
-        switch (accion) {
-            case "PASAR NORMALMENTE":
-                console.log("¡Oh no! Pasaste en el momento indebido ❌, ¡Has perdido! ");
-                break;
-            case "ACELERAR":
-                console.log("¡Oh no! Cruzaste mientras autos en otra dirección pasaban y chocaste , ¡Has perdido! ❌");
-                break;
-            case "ESPERAR":
-                console.log("¡Bien hecho! Esperaste en el momento adecuado ✅, ¡Has ganado! ");
-                break;
-            default:
-                console.log("Respuesta no válida.");
-        }
-        break;
-
-    default:
-        console.error("Error: Color del semáforo no reconocido.");
-}
+//SE DEBE USAR BREAK DESPUES DE CADA CASO 
