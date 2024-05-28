@@ -454,9 +454,8 @@ let articulos = [
 
 
 
-let articuloBuscado = prompt("Ingrese el nombre del articulo que desea buscar").toLocaleLowerCase();
+let articuloBuscado = ("Ingrese el nombre del articulo que desea buscar").toLocaleLowerCase();
 let articulosEncontrados = [];
-
 articulos.filter((articulo) => {
     if (articulo.nombre.includes(articuloBuscado)) {
         articulosEncontrados.push(articulo);
@@ -477,7 +476,7 @@ articulosEncontrados.forEach((articulo) => {
 if (articulosEncontrados.length) {
     alert(mensajeDeSalida);
 } else {
-    alert("No se han encontrado articulos que coincidan con la busqueda");
+    ("No se han encontrado articulos que coincidan con la busqueda");
 };
 
 
@@ -487,6 +486,13 @@ if (articulosEncontrados.length) {
 
 let numeros2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let numerosDuplicados = [];
+
+// Sin embargo, la forma mas comun de utilizar funciones de callback es mediante funciones flecha
+numerosDuplicados = numeros2.map((numero) => numero * 2);
+
+
+console.log(numerosDuplicados);
+
 
 // Se puede hacer uso deuna funcion de callback si se declarara previamente
 // function duplicar(numero){
@@ -500,14 +506,6 @@ let numerosDuplicados = [];
 // numeros2.map(function(numero){
 //     numerosDuplicados.push(numero * 2);
 // });
-
-
-// Sin embargo, la forma mas comun de utilizar funciones de callback es mediante funciones flecha
-numerosDuplicados = numeros2.map((numero) => numero * 2);
-
-
-console.log(numerosDuplicados);
-
 
 
 
@@ -540,7 +538,6 @@ console.log(usuarios);
 // reduce( callback(acumulador, elemento), valorInicial);
 const numeros3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const acumulado = numeros3.reduce((contador, numero) => contador + numero, 0);
-con
 
 
 // Ejemplo 17.1: Obtener el total a pagar por los productos del carrito
