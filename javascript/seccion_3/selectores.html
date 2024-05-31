@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Selectores</title>
+        <!-- Importamos el CDN de tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+<!--gap: el espacio entre elementos-->
+
+    <style>
+        .mayra{
+            font-weight: 900;
+            font-size: 25px;
+            background-color: rgb(174, 84, 99);
+            color: white
+        }
+    </style>
+
+    <body class="bg-slate-400 grid place-content-center gap-5 pt-12">
+        <h1 id="titulo" class="Titulos_de_Ejemplo clase2 clase3 clase4">Selectores</h1>
+        <section>
+            <p id="parrafo-1" class="text-lg font-bold font-['Arial'] text-green-700">Este es el parrafo 1</p>
+            <p id="parrafo-2" class="text-lg font-bold font-['Arial'] text-green-700">Este es el parrafo 2</p>
+            <p id="parrafo-3" class="text-lg font-bold font-['Arial'] text-green-700">Este es el parrafo 3</p>
+            <p id="parrafo-4" class="text-lg font-bold font-['Arial'] text-blue-700">Este es el parrafo 4</p>
+            <p id="parrafo-5" class="text-lg font-bold font-['Arial'] text-green-700">Este es el parrafo 5</p>
+            <button onclick="modoNoche()" id="boton" class="bg-green-900 rounded-full px-2 py-1 text-white my-8" >Editar parrafos</button>
+        </section>
+
+        <div id="caja-prueba" class="bg-gray-500/90 p-2 w-[350px] ml-[100px]">
+            <img id="gh" width="300px" src="https://i.pinimg.com/736x/a7/0c/7b/a70c7b0d52c17255df278bbc5cb82693.jpg" alt="Gato Hacker">
+            <p>Parrafo de prueba</p>
+        </div>
+
+
+        <div id="contenedor" class="bg-slate-500 grid place-items-center px-6 rounded-xl mb-12 py-5 gap-2">
+            <button class="bg-green-600 mb-3 px-3 py-2 rounded-full" onclick="agregar()">Agregar</button>
+            <button class="bg-red-600 mb-3 px-3 py-2 rounded-full" onclick="eliminar()">Eliminar</button>
+            <h3 id="ultimo" class="font-bold mb-6">Aqui van mas elementos</h3>
+        </div>
+
+
+        <!-- <ol>
+            <li class="hijos">Elemento 1</li>
+            <li class="hijos">Elemento 2</li>
+            <li class="hijos">Elemento 3</li>
+            <li class="hijos">Elemento 4</li>
+            <li class="hijos">Elemento 5</li>
+        </ol> -->
+    </body>
+    <script src="selectores.js"></script>
+</html>
