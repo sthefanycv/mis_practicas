@@ -30,16 +30,13 @@ const titulo = document.getElementById('titulo');
 
 // Medotos usados con selectores:
 // elemento.getAttribute: obtiene el(los) valor(es) del atributo indicado en el elemento seleccionado.
-let clasesElemento = titulo.getAttribute('class'); // Devuelve el valor del atributo class (o cualquiera indicado) del elemento seleccionado. En si devueve las valores dentro de la class de Titulo
-
-//     En el HTML:   <h1 id="titulo" class="Titulos_de_Ejemplo clase2 clase3 clase4">Selectores</h1> 
-
+let clasesElemento = titulo.getAttribute('class'); // Devuelve el valor del atributo class (o cualquiera indicado) del elemento seleccionado.
 console.log(`Las clases del elemento son: ${clasesElemento}`);
 
 
 
 // elemento.setAttribute: establece un atributo con su valor en el elemento seleccionado.
-titulo.setAttribute("style", "font-size: 35px;");
+titulo.setAttribute("style", "font-size: 35px;"); //Titulo es una etiqueta con clase en mi html (selectores.html) aqui estamos cambiando el estilo aunque solo s eve fugasmente
 
 
 
@@ -49,7 +46,7 @@ titulo.innerText = "Aprendiendo a usar selectores en JavaScript - Lexpin";
 
 // elemento.innerHTML: obtiene o establece el contenido HTML de un elemento seleccionado.
 let caja = document.getElementById('caja-prueba');
-console.dir(caja);
+console.dir(caja); //Dir: Muestra una lista interactiva de las propiedades de un objeto JavaScript específico.
 // Agrega un boton al contenido de la caja.
 caja.innerHTML += "<button class='bg-yellow-500 rounded-xl px-3 py-2'>Click me!</button>"; 
 
@@ -76,7 +73,8 @@ const parrafo5 = document.getElementById("parrafo-5");
 
 // Verificamos las clases de los elementos seleccionados.
 // contains retorna un valor booleano, es decir, true si el elemento tiene la clase indicada y false si no la tiene.
-console.log(`El parrafo 1 contiene la clase "text-3xl": ${parrafo1.classList.contains("text-lg")}`); // true
+console.log(`El parrafo 1 contiene la clase "text-3xl": ${parrafo1.classList.contains("text-lg")}`); // true 
+
 console.log(`El parrafo 2 contiene la clase "font-bold": ${parrafo2.classList.contains("font-bold")}`); // false
 console.log(`El parrafo 3 contiene la clase "font-['Arial']": ${parrafo3.classList.contains("font-['Arial']")}`); // true
 console.log(`El parrafo 4 contiene la clase "text-blue-700": ${parrafo4.classList.contains("text-blue-700")}`); // false
@@ -107,6 +105,9 @@ function modoNoche(){
     titulo.classList.toggle("text-white");
     
     let imagen = document.getElementById("gh");
+
+
+    
     // console.dir(imagen)
     
     if(imagen.src === "https://i.pinimg.com/736x/a7/0c/7b/a70c7b0d52c17255df278bbc5cb82693.jpg"){
@@ -201,4 +202,4 @@ function eliminar(){
 
 // 6- Edita los estilos del parrafo creado en el punto 2 con JavaScript y el metodo classList.
 
-// 7- Crea un alert que indique si un elemento tiene una clase especifica o no.io
+// 7- Crea un alert que indique si un elemento tiene una clase especifica o no.
