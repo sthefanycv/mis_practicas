@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6">Registro de Producto</h2>
+        <form id="product-form">
+            <!-- Paso 1 -->
+            <div id="step-1" class="step">
+                <div class="mb-4">
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre del producto</label>
+                    <input type="text" id="nombre" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="precio" class="block text-sm font-medium text-gray-700">Precio</label>
+                    <input type="number" id="precio" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="cantidad" class="block text-sm font-medium text-gray-700">Cantidad</label>
+                    <input type="number" id="cantidad" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción</label>
+                    <textarea id="descripcion" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required></textarea>
+                </div>
+                <button type="button" id="next-btn" class="w-full bg-blue-500 text-white py-2 rounded-md">Siguiente</button>
+            </div>
+            
+            <!-- Paso 2 -->
+            <div id="step-2" class="step hidden">
+                <div class="mb-4">
+                    <label for="fabricante" class="block text-sm font-medium text-gray-700">Fabricante</label>
+                    <input type="text" id="fabricante" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="fecha_fabricacion" class="block text-sm font-medium text-gray-700">Fecha de fabricación</label>
+                    <input type="date" id="fecha_fabricacion" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="fecha_recibo" class="block text-sm font-medium text-gray-700">Fecha de recibo</label>
+                    <input type="date" id="fecha_recibo" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700">¿Es consumible?</label>
+                    <div class="mt-1">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="consumible" value="si" class="form-radio" required>
+                            <span class="ml-2">Sí</span>
+                        </label>
+                        <label class="inline-flex items-center ml-6">
+                            <input type="radio" name="consumible" value="no" class="form-radio" required>
+                            <span class="ml-2">No</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-4 hidden" id="fecha_caducidad_container">
+                    <label for="fecha_caducidad" class="block text-sm font-medium text-gray-700">Fecha de caducidad</label>
+                    <input type="date" id="fecha_caducidad" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <div class="mb-4 hidden" id="tiempo_garantia_container">
+                    <label for="tiempo_garantia" class="block text-sm font-medium text-gray-700">Tiempo de garantía (meses)</label>
+                    <input type="number" id="tiempo_garantia" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-md">Registrar</button>
+                <button type="button" id="back-btn" class="w-full mt-2 bg-gray-500 text-white py-2 rounded-md">Atrás</button>
+            </div>
+        </form>
+    </div>
+    <div id="product-list" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg mt-6 hidden">
+        <h2 class="text-2xl font-bold mb-6">Productos Registrados</h2>
+        <ul id="products" class="list-disc pl-5"></ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="ejercicio.js"></script>
+</body>
+</html>

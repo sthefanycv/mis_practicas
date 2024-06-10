@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  .animarTarjeta {
+    animation: moverTarjeta 2.5s 0s 1 forwards;
+  }
+
+  .removerTarjeta {
+    animation: removerTarjeta 2.5s 0s 1 forwards;
+  }
+
+  .animarTarjetaPantalla {
+    animation: moverTarjetaPantalla 2s 0s infinite alternate;
+  }
+
+  .sombraInterna {
+    box-shadow:
+      inset 0px 0px 10px 15px rgba(86, 86, 86, 0.2),
+      inset 0px 0px 10px 35px rgba(64, 64, 64, 0.2),
+      inset 0px 0px 10px 50px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes moverTarjeta {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-65px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes removerTarjeta {
+    0% {
+      transform: translateY(-65px);
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes moverTarjetaPantalla {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-32px);
+    }
+  }
+</style>
+
+<body class="w-screen h-screen grid grid-cols-3 bg-[url('./assets/material.jpg')]">
+  <!-- Pantalla y teclado -->
+  <section class="flex flex-col items-center gap-4 col-span-2 h-[100%]">
+    <!-- Pantalla -->
+    <div class="w-[70%] h-[60%] bg-white mt-6 rounded-lg p-12  sombraInterna">
+      <div class="w-full h-full flex flex-col items-center border border-black border-solid rounded">
+        <!-- Navbar -->
+        <div class="flex flex-col justify-center items-center w-full h-[20%] bg-slate-600 text-white">
+          <p>08:32:05 AM</p>
+          <p>04/JUN/2024</p>
+        </div>
+
+        <!-- Zona interactiva -->
+        <div class="grid grid-cols-3 w-full h-[60%]">
+          <!-- Zona interactiva izquierda -->
+          <div class="w-full h-full col-span-2" id="pantallaIzq">
+
+            <!-- Primera interaccion / Solicitar Tarjeta  -->
+            <div class="w-full h-full flex flex-col justify-center items-center" id="interaccion1">
+              <h3>Inserta tu tarjeta</h3>
+              <img class="w-32 z-30 rounded-sm" src="./assets/ranura_TDC_SUP.webp" alt="RanuraTDCSUP">
+              <img class="w-32 z-10 rounded-sm" src="./assets/ranura_TDC_INF.webp" alt="RanuraTDCINF">
+              <img class="opacity-100 h-36 z-20 mt-3 animarTarjetaPantalla" src="./assets/TDC.webp" alt="Tarjeta">
+            </div>
+
+            <!-- Segunda interaccion / Ingresar Clave -->
+            <div class="w-full h-full flex flex-col justify-center items-center hidden" id="validarClave">
+              <h3 class="">Ingresar clave</h3>
+              <input class="text-center border-none outline-none" type="text" id="clave" placeholder="0000"
+                maxlength="4" readonly>
+            </div>
+
+            <!-- Menu de opciones -->
+            <div class="w-full h-full flex flex-col justify-center items-center hidden" id="menu">
+              <h3 class="text-center">¿Que deseas realizar?</h3>
+              <table class="pl-[40%] w-[60%]">
+                <tr class="grid grid-cols-3 w-full">
+                  <td class="col-span-1 text-end" id="flecha-1">➤</td>
+                  <td class="col-span-2" id="opcion-1">Consultar</td>
+                </tr>
+                <tr class="grid grid-cols-3 w-full">
+                  <td class="col-span-1 text-end" id="flecha-2"></td>
+                  <td class="col-span-2" id="opcion-2">Retirar</td>
+                </tr>
+                <tr class="grid grid-cols-3 w-full">
+                  <td class="col-span-1 text-end" id="flecha-3"></td>
+                  <td class="col-span-2" id="opcion-3">Depositar</td>
+                </tr>
+                <tr class="grid grid-cols-3 w-full">
+                  <td class="col-span-1 text-end" id="flecha-4"></td>
+                  <td class="col-span-2" id="opcion-4">Transferir</td>
+                </tr>
+                <tr class="grid grid-cols-3 w-full">
+                  <td class="col-span-1 text-end" id="flecha-5"></td>
+                  <td class="col-span-2" id="opcion-5">Cambiar Clave</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Pantalla para elegir cuenta / consultar, retirar, depositar -->
+            <div class="w-full h-full flex flex-col justify-center items-center hidden" id="cuentas">
+              <h3 class="text-center">Selecciona la cuenta a consultar</h3>
+              <table class="pl-[40%] w-[60%]">
+                <tr class="grid grid-cols-3 w-full">
+                  <td class="col-span-1 text-end" id="fcuenta-1">➤</td>
+                  <td class="col-span-2" id="cuenta-1">Cuenta de Ahorro</td>
+                </tr>
+                <tr class="grid grid-cols-3 w-full">
+                  <td class="col-span-1 text-end" id="fcuenta-2"></td>
+                  <td class="col-span-2" id="cuenta-2">Cuenta Corriente</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Pantalla para indicar monto a retirar -->
+            <div class="w-full h-full flex flex-col justify-center items-center hidden" id="montoRetiro">
+              <h3 class="text-center">Indica el monto a retirar</h3>
+              <input class="text-center border-none outline-none" type="text" id="montoRetirar" placeholder="0000"
+                maxlength="4" readonly>
+            </div>
+
+            <!-- Pantalla para indicar monto a depositar -->
+            <div class="w-full h-full flex flex-col justify-center items-center hidden" id="montoDeposito">
+              <h3 class="text-center">Indica el monto a depositar</h3>
+              <input class="text-center border-none outline-none" type="text" id="montoDepositar" placeholder="0000"
+                maxlength="4" readonly>
+            </div>
+
+            <!-- Pantalla para indicar monto a transferir -->
+            <div class="w-full h-full flex flex-col justify-center items-center hidden" id="montoTransferencia">
+              <h3 class="text-center">Indica el monto a transferir</h3>
+              <input class="text-center border-none outline-none" type="text" id="montoTransferir" placeholder="0000"
+                maxlength="4" readonly>
+            </div>
+          </div>
+
+          <!-- Zona interactiva derecha -->
+          <div class="w-full h-full col-span-1" id="pantallaDer">
+
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-end bg-slate-900 w-full h-[20%]">
+          <img class="w-24 h-full" src="./assets/Logo Banco.webp" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Salida Dinero / Teclado / Comprobante -->
+    <div class="flex justify-evenly w-[100%] h-[35%] items-center gap-4">
+      <!-- Salida Dinero -->
+      <div>Salida de dinero</div>
+
+      <!-- Teclado -->
+      <div class="relative w-[320px] h-[250px]">
+        <img class="absolute z-10" src="./assets/tablero.webp" alt="teclado">
+        <div class="absolute grid grid-cols-4 gap-6 py-5 pl-4 pr-5 place-items-center z-20 w-[100%] h-[100%]">
+          <!-- Teclado numerico -->
+          <div class="grid grid-cols-3 col-span-3 place-items-center gap-2">
+            <div id="btn1" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn2" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn3" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn4" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn5" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn6" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn7" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn8" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div id="btn9" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div class="nulo w-14 h-11"></div>
+            <div id="btn0" class="w-14 h-11 rounded-lg hover:bg-black/15"></div>
+            <div class="nulo w-14 h-11"></div>
+          </div>
+          <!-- Teclado opciones -->
+          <div class="flex flex-col col-span-1 gap-2 ml-[-30px]">
+            <div id="btnCancel" class="w-16 h-11 ml-4 rounded-lg hover:bg-black/15"></div>
+            <div id="btnClear" class="w-16 h-11 ml-4 rounded-lg hover:bg-black/15"></div>
+            <div id="btnEnter" class="w-16 h-11 ml-4 rounded-lg hover:bg-black/15"></div>
+            <div class="nulo w-16 h-11 ml-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comprobante -->
+      <div>Comprobante</div>
+    </div>
+  </section>
+
+  <!-- Ranura Tarjeta / Pago SC -->
+  <section
+    class="flex flex-col justify-center items-center gap-40 col-span-1 h-[100%] bg-gradient-to-r from-transparent to-black/50">
+    <!-- Ranura Tarjeta -->
+    <div class="flex flex-col items-center overflow-y-hidden">
+      <img class="w-44 z-30 rounded-sm" src="./assets/ranura_TDC_SUP.webp" alt="RanuraTDCSUP" id="ranuraSup">
+      <img class="w-44 z-10 rounded-sm" src="./assets/ranura_TDC_INF.webp" alt="RanuraTDCINF">
+      <img class="opacity-0 h-48 z-20" src="./assets/TDC.webp" alt="Tarjeta" id="Tarjeta">
+    </div>
+
+    <!-- Pago SC -->
+    <img class="w-32 mix-blend-multiply drop-shadow-lg"
+      src="https://storage.googleapis.com/support-kms-prod/3013C0EB31C402C3EE6BC111400A90709BC3" alt="PagoSC">
+  </section>
+</body>
+<script src="cajero.js"></script>
+
+</html>
