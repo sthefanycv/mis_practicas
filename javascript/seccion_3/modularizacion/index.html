@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modularizacion</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="w-screen h-screen bg-slate-400 flex flex-col items-center pt-12">
+        <h1 class="text-3xl font-bold text-white mb-12 ">Modularizacion</h1>
+        <div id="app">
+            
+            <!-- Menu -->
+            <div id="menu" class="flex flex-col items-center">
+                <h3 class="text-center bg-slate-500/70 px-3 py-2 rounded-full text-white font-bold">¿Que deseas realizar?</h3>
+                <table class="w-[250px] h-[300px] bg-slate-600 flex flex-col items-start justify-center rounded-lg my-12">
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-1">➤</td>
+                        <td class="text-white col-span-2" id="opcion-1">Sumar</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-2"></td>
+                        <td class="text-white col-span-2" id="opcion-2">Restar</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-3"></td>
+                        <td class="text-white col-span-2" id="opcion-3">Dividir</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-4"></td>
+                        <td class="text-white col-span-2" id="opcion-4">Multiplicar</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-5"></td>
+                        <td class="text-white col-span-2" id="opcion-5">Potenciar</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-6"></td>
+                        <td class="text-white col-span-2" id="opcion-6">Tabla de Multiplicar</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-7"></td>
+                        <td class="text-white col-span-2" id="opcion-7">Promedio (Array)</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-8"></td>
+                        <td class="text-white col-span-2" id="opcion-8">Validar Par</td>
+                    </tr>
+                    <tr class="grid grid-cols-3 w-full">
+                        <td class="text-white col-span-1 text-end" id="flecha-9"></td>
+                        <td class="text-white col-span-2" id="opcion-9">Validar Impar</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Sumar, Restar, Dividir, Multiplicar, Potenciar -->
+            <div id="primeras5" class="w-[700px] bg-slate-500 p-6 flex flex-col items-center rounded-lg hidden">
+                <h2 class="text-white font-bold" id="titulo1"></h2>
+                <div class="flex w-full justify-evenly my-12">
+                    <input class="rounded-lg pl-2" type="number" id="numero1" placeholder="Ingrese el numero 1">
+                    <input class="rounded-lg pl-2" type="number" id="numero2" placeholder="Ingrese el numero 2">
+                </div>
+                <button id="operar1" class="bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-xl"></button>
+                
+                <p id="resultado1" class="mt-12 text-white"></p>
+            </div>
+            
+            <!-- Tabla de multiplicar -->
+            <div id="tablaMultiplicar" class="w-[700px] bg-slate-500 p-6 flex flex-col items-center rounded-lg hidden">
+                <h2 class="text-white font-bold" id="titulo2">Tabla de multiplicar</h2>
+                <input class="rounded-lg pl-2 my-12 w-64" type="number" id="numeroTabla" placeholder="Ingrese un numero">
+                <button id="operar2" class="bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-xl">Ver Tabla</button>
+                <p id="resultado2" class="mt-12 text-white"></p>
+            </div>
+            
+            <!-- Promedio -->
+            <div id="promedio" class="w-[700px] bg-slate-500 p-6 flex flex-col items-center rounded-lg hidden">
+                <h2 class="text-white font-bold" id="titulo3">Promedio</h2>
+                <input class="rounded-lg pl-2 my-12 w-64" type="number" id="operando" placeholder="Ingrese un numero">
+                <button id="operar3" class="bg-yellow-600 hover:bg-yellow-700 text-white px-2 py-1 rounded-xl mb-3">agregar</button>
+                <button id="operar4" class="bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-xl">Ver Promedio</button>
+                <p id="operandos" class="mt-12 text-white"></p>
+                <p id="resultado3" class="mt-3 text-white"></p>
+            </div>
+
+        </div>
+    </body>
+    <script type="module" src="index.js"></script>
+    <!-- 
+        ¿Por que debemos indicar que el script es de tipo module?
+        Porque estamos utilizando la importación y exportación de módulos, es decir, estamos modularizando el código o usando
+        una librería.
+    -->
+</html> 

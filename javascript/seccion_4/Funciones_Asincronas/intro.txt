@@ -1,0 +1,15 @@
+¿Qué es el asincronismo?
+    El asincronismo es una técnica que permite a los programas ejecutar tareas de manera no bloqueante. 
+    Esto permite que el programa puede continuar con otras tareas mientras se completa una tarea asíncrona, 
+    en lugar de bloquearse y esperar a que se complete.
+
+    El asincronismo es fundamental para mejorar la experiencia del usuario y mejorar la eficiencia del 
+    programa, especialmente cuando se trata de tareas que pueden tardar un tiempo en completarse, como 
+    las solicitudes de red y consumo de API´s, trabajos en BD, etc...
+
+    Hay varias formas de lograr el asincronismo, como promesas, async-await, setTimeout, setInterval
+    y la utilización de eventos, cada uno de estos enfoques ofrece diferentes ventajas y desventajas 
+    y puede ser apropiado en función del uso que se le quiera dar.
+
+    En resumen podemos definir el asincronismo como una técnica esencial para mejorar la experiencia 
+    del usuario y la eficiencia del programa.
