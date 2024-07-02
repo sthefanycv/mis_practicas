@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Fetch API</title>
+    </head>
+    <body class="bg-slate-600">
+        <h1 class="font-bold text-3xl text-center">Fetch API</h1>
+
+        <!-- Cuadricula de personajes -->
+        <section id="cuadricula" class=" flex flex-col pt-[40px] gap-[50px] items-center">
+            <h3 class="font-bold text-lg">Personjes</h3>
+            
+            <!-- En este contendor vamos a mostrar todos los personajes -->
+            <section id="personajes" class="grid grid-cols-5 place-items-center bg-white/25 w-[100%] min-h-[50px] gap-4 px-12 py-12">
+                <!-- Plantilla de un personaje -->
+                
+                <!-- 
+                    <div class="flex flex-col items-center p-2 w-72 bg-slate-500 rounded-xl">
+                        <p class="font-bold">${personaje.id}</p>
+                        <img class="rounded h-64" src="${personaje.image}" alt="">
+                        <h3 class="nombre">${personaje.name}</h3>
+                        <button id="${personaje.id}" class="bg-green-600 hover:bg-green-800">Detalles</button>
+                    </div> 
+                -->
+
+                <!-- Cada personaje se cargara en un contenedor como el que observamos arriba -->
+            </section>
+
+            <button 
+                id="buscar"
+                class="bg-white/50 rounded-full px-4 py-2 font-bold hover:bg-white/25" 
+            >
+                Buscar Personajes
+            </button>
+
+            <div class="flex w-[600px] justify-evenly">
+                <button id="anterior" class="bg-yellow-500 hover:bg-yellow-700 px-2 py-1 rounded-full font-bold">Anterior</button>
+                <div class="flex flex-col items-center">
+                    <p class="font-semibold">Personajes por Pagina</p>
+                    <label id="cantidadLabel" for="cantidad">10</label>
+                    <input type="range" id="cantidad" value="10" min="1" max="58">
+                </div>
+                <button id="siguiente" class="bg-yellow-500 hover:bg-yellow-700 px-2 py-1 rounded-full font-bold">Siguiente</button>
+            </div>
+        </section>
+
+        <!-- Personaje Indivivual -->
+        <section id="personajeIndividual" class="flex flex-col items-center gap-6 mt-8 hidden">
+            <h3 class="font-bold text-lg">Detalles del personaje</h3>
+        </section>
+    </body>
+    <script src="Fetch.js"></script>
+    <!-- Para probar el script llamado "Fetch2.js" comenta el script anterior "Fetch.js"-->
+    <!-- <script src="Fetch2.js"></script> -->
+</html>
